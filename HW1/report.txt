@@ -1,0 +1,50 @@
+Q0: What's the best-case, worst-case, and average-case time complexities of quicksort. Briefly explain each case.
+    Best-case: 
+        Pivots are always in the middle of the list (in terms of value). Then the we will have
+        lg(n) times of recursion. Each recursion, we need to go through the whole list, then the time complexities
+        is O(n*lg(n)).
+
+    Worse-case: 
+        Partitions are fully unbalanced for all recurions which means, in each recursion, 
+        we need to go through the whole remaining list and only the pivot is taken out from the list
+        Therefore, the time complexity is (n+n-1+n-2+n-3...+1) which is O(n^2).
+
+    Average-case: 
+        Ramdomized pivots will result in theta(n*lg(n)) time complexity.
+
+Q1: What's the best-case, worst-case, and average-case time complexities? Briefly explain.
+    Best-case: 
+        Similar to quicksort. Pivots' value are in the middle of the list. What's different is that
+        in each recurion, we will throw half of the list. That is, the numebr of times we need to check values is
+        (n+n/2+n/4+n/8+...+1), which is O(n).
+
+    Worse-case: 
+        Simialr to the Worse case of quicksort. Each recurion we will only be able to reduce the size of the 
+        list by 1. Thus, we have (n+n-1+n-2+n-3+n-4+...+1) which is O(n^2).
+
+    Average-case:
+        Ramdomized pivots will result in theta(n) time complexity.
+
+Q2: What are the time complexities for the operations implemented?
+    sorted(tree):
+        Best-case: O(n)
+        Worse-case: O(n)
+        Average-case: theta(n)
+    search(tree, x):
+        Best-case: O(lg(n))
+        Worse-case: O(n) for extermely unbalanced tree
+        Average-case: theta(lg(n))
+    insert(tree, x):
+        same as search(tree, x)
+
+Debriefing
+1.  Approximately how many hours did you spend on this assignment?
+    4 hours (1 hour was on how to connect server without DUO)
+2.  Would you rate it as easy, moderate, or difficult?
+    Easy
+3.  Did you work on it mostly alone, or mostly with other people?
+    All alone (with online sources)
+4.  How deeply do you feel you understand the material it covers (0%-100%)? 
+    100%
+5.  Any other comments?
+    None

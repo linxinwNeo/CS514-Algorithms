@@ -1,0 +1,91 @@
+0.  There are two methods for building a heap from an unsorted array:
+    (1) insert each element into the heap   --- O(nlogn) -- heapq.heappush()
+    (2) heapify (top-down)                  --- O(n)     -- heapq.heapify()
+
+
+    (a) Derive these time complexities
+        (1) is simply O(n*logn) because each heappush() takes log(n) time and there are n elements.
+        (2) initially looks like O(n*logn) as well but it is actually O(n). 
+            Suppose we are using for-loop approach for the heapify. We use reversely-level traversal from
+            the level 1, which have n/2 elements in this level (we skip level 0 elements). 
+            For each iteration, we do the bubble down and the time taking for the bubble down opeartion is
+            dependent on the depth of the tree at that root. Therefore, for level 1 elements, they take
+            n/2 * 1 time in total. Then similarly, for level 2 elements, they take n/4 * 2 time... Finally, for 
+            level h elements (suppose the depth of the tree is h) take 1 * n time.
+            Add them up: n/2 * 1 + n/4 * 2 + n/8 * 4 + ... + 1 * n = n.
+
+
+    (b) Use a long list of random numbers to show the difference in time.
+        skip.
+
+    (c) What about sorted or reversely-sorted numbers?
+        If we are using min-heap, then heapify for sorted numbers will be fast because bubble down
+        does not run. This is a best-case, but it's time complexities is still O(n).
+        For reversely-sorted numbers, then bubble down will need to do some work and the heapify 
+        will be O(n).
+
+        Sorted array is also best-case for (1). This way, after each element is pushed into the heap,
+        the bubbledown() does not run either.
+        For reversely-sorted numbers, it is the worse-case for (1), but it still runs in O(n*logn).
+
+
+1.  Given two lists A and B, each with n integers, return
+    a sorted list C that contains the smallest n elements from AxB...
+
+    (a) enumerate all n^2 pairs, sort, and take top n.
+    (b) enumerate all n^2 pairs, but use qselect from hw1.
+    (c) Dijkstra-style best-first, only enumerate O(n) (at most 2n) pairs.
+    Hint: you can use Python's heapq module for priority queue.
+
+    Q: What are the time complexities of these algorithms?
+    (a) O(n^2 + n*logn) = O(n^2)
+    (b) O(n^2 + n) = O(n^2)
+    (c) O( 2*n*logn + log(2n) + 1 ) = O( n*logn )
+
+2.  k-way mergesort (the classical mergesort is a special case where k=2).
+    Q: What is the complexity?
+    O(n * logn)
+    In k-way mergesort, a list of n elements will be divided log_k n times. And log_k n is 
+    smaller than log_2 n if k > 2, which means there will be fewer levels.
+    At each level, we have n elements to combine even though they are still apart.
+    We use heap of size k to handle the combination of k ways, which means the time taking
+    for combination for each level is O( k + n*logk ) = O(n*logk).
+    Then the overall time complexity is O( n * logk * log_k*n ) = O(n*logn).
+
+3.  Find the k smallest numbers in a data stream of length n (k<<n),
+    using only O(k) space (the stream itself might be too big to fit in memory).
+
+    Q: What is your complexity? Write down the detailed analysis in report.txt.
+    Using max-heap. That way, the bigger number is always on the root and can be easily replaced
+    by a smaller value from the datastream and maintaining a heap of fixed size of k.
+
+    The above approach takes O( k ) + O( n * logk ) + O(k * logk) = O(n*logk)
+    where O(k) is for the heapify for the initial k values stored in the heap,
+    O( n * logk ) means the heap.replace opearation for all numbers in the datastream,
+    lastly, O(k * logk) is used when creating the ordered output.
+
+
+Debriefing
+0.  What's your name?
+    Xinwei Lin
+
+1.  Approximately how many hours did you spend on this assignment?
+    7 hrs
+
+2.  Would you rate it as easy, moderate, or difficult?
+    difficult
+
+3.  Did you work on it mostly alone, or mostly with other people?
+    Note you are encouraged to discuss with your classmates, 
+    but each students should submit his/her own code.
+
+    Alone
+
+4.  How deeply do you feel you understand the material it covers (0%-100%)? 
+    100%
+
+5.  Which part(s) of the course you like the most so far?
+    Videos and the lecture.
+
+6.  Which part(s) of the course you dislike the most so far?
+    None

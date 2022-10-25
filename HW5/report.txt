@@ -1,0 +1,50 @@
+1.  Maximum Weighted Independent Set
+    Q: What's the complexity?
+
+    It's O(n).
+    Since T(n) = T(n-1) + O(1):
+    each iteration the input is reduced by 1 or 2 and in each iteration,
+    and we do constant time opeartions in each iteration.
+
+2.  Number of n-node BSTs
+    Qa: What's the complexity of this DP?
+    O(n^2)
+
+    Qb: What's the name of this famous number series?
+    ???
+
+
+Debriefing
+0.  What's your name?
+    Xinwei Lin
+
+1.  Approximately how many hours did you spend on this assignment?
+    5 hrs
+
+2.  Would you rate it as easy, moderate, or difficult?
+    easy-moderate
+
+3.  Did you work on it mostly alone, or mostly with other people?
+    
+    Alone
+
+4.  How deeply do you feel you understand the material it covers (0%-100%)? 
+    
+    90%
+
+5.  Which part(s) of the course you like the most so far?
+
+    Recordings.
+
+6.  Which part(s) of the course you dislike the most so far?
+
+    I need more 'space' for answering question in the Quiz.
+    Because I don't handwrite much and my handwriteen words
+    are quite large...
+
+7.  Take a moment to reflect on your Quiz 1 and Quiz 2 performance,
+    (make sure you understand all the problems that you got wrong),
+    and what you plan to achieve in the Midterm.
+
+    I think I'll get 80% (or above mean/median) of the total score in the Midterm if nothing
+    special happens.
