@@ -1,0 +1,46 @@
+1.  Unbounded Knapsack
+    (a) Describe a greedy solution.
+        Calculate 'unit value' for each item in the beginning, then
+        take as much as you can. If there are extra space, filling with
+        the items that can fit with highest 'unit value'.
+
+    (b) Show a counterexample to the greedy solution.
+        Suppose a bag that can weight 10kg.
+        Items:  weight(kg)      value   unit value
+        item1   5.1             6       6/5.1 > 1
+        item2   5               5       5/5 = 1
+        If it is a greedy algorithm, item1 will be picked.
+        Then it's value will be 6.
+        But the optimal solution will be 10 by picking two item2.
+
+    (c) Define the DP subproblem 
+        Smaller bag.
+
+    (d) Write the recurrence relations
+        best(i) = max ( best( i - weight_j ) ) for each item j.
+
+    (e) Do not forget base cases
+        best(0) = 0 assume there is no item with 0 weight. 
+
+    (f) Analyze the space and time complexities
+        Time: O(w*n)
+        Space: O(w)
+
+2.  Bounded Knapsack
+    (a) Describe a greedy solution.
+
+
+    (b) Show a counterexample to the greedy solution.
+
+
+    (c) Define the DP subproblem 
+
+
+    (d) Write the recurrence relations
+
+
+    (e) Do not forget base cases
+
+
+    (f) Analyze the space and time complexities
+
