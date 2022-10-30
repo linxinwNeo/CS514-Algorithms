@@ -9,34 +9,34 @@
 # (i.e., take as many copies from the first item as possible, etc.)
 
 # item = (weight, value)
-def best( w, items, records = None ):
-    if w <= 0: return (0, [0]*len(items)) # base case
+def best( bag_size, items, records = None ):
+    if bag_size <= 0: return (0, [0]*len(items)) # base case
     if records == None: # first call inits the record list
-        records = [-1]*(w+1)
+        records = [-1]*(bag_size+1)
 
     best_items = None
     picked_item_idx = -1
     best_value = 0
     for idx, item in enumerate(items):
-        if item[0] > w:
+        if item[0] > bag_size:
             continue
-        if records[w-item[0]] != -1:
-            value, picked_items = records[w-item[0]]
+        if records[bag_size-item[0]] != -1:
+            value, picked_items = records[bag_size-item[0]]
             picked_items = picked_items.copy()
         else:
-            value, picked_items = best( w-item[0], items, records )
-            records[w-item[0]] = (value, picked_items.copy())
+            value, picked_items = best( bag_size-item[0], items, records )
+            records[bag_size-item[0]] = (value, picked_items.copy())
         if value + item[1] > best_value:
             picked_item_idx = idx
             best_items = picked_items
             best_value = value + item[1]
             
     if best_items == None: # nothing can fit
-        records[w] = (0, [0]*len(items))
+        records[bag_size] = (0, [0]*len(items))
         return (0, [0]*len(items))
     else: # we have found an item to be picked
         best_items[picked_item_idx] += 1
-        records[w] = ( best_value, best_items.copy() )
+        records[bag_size] = ( best_value, best_items.copy() )
         return ( best_value, best_items )
     
 # print( best(3, [(2, 4), (3, 5)]) )
