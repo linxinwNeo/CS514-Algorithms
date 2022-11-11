@@ -1,4 +1,4 @@
-# CS517-Algorithms
+# CS514-Algorithms
  **Fall 2022**  
  **Instructor: Liang Huang**  
  **Course Website: https://classes.engr.oregonstate.edu/eecs/fall2022/cs514-001/**  
@@ -35,4 +35,6 @@
  - unbounded Knapsack (*knapsack_unbounded.py*)  
  - bounded Knapsack (*knapsack_bounded.py*)  
  
- **HW7:**  
+ **HW8:**  
+ - topological Sort (*topol.py*)
+ - viterbi Algorithm (*viterbi.py*)  
