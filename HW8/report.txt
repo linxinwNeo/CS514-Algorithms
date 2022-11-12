@@ -1,0 +1,66 @@
+0. For the following graphs, decide whether they are
+   (1)  directed or undirected, (2) dense or sparse, and (3) cyclic or acyclic:
+
+   (a)  Facebook
+        undirected, sparse, cyclic
+
+   (b)  Twitter
+        directed, sparse, cyclic
+
+   (c)  a family
+        undirected, dense, cyclic
+
+   (d)  V=airports, E=direct_flights
+        directed, sparse, cyclic
+
+   (e)  a mesh
+        undirected, sparse, cyclic
+
+   (f)  V=courses, E=prerequisites
+        directed, sparse, acyclic
+
+   (g)  a tree
+        directed, sparse, acyclic
+
+   (h)  V=linux_software_packages, E=dependencies
+        directed, sparse, acyclic
+
+   (i)  DP subproblems for 0-1 knapsack
+        directed, sparse, acyclic
+
+1. Topological Sort
+    (a) did you realize that bottom-up implementations of DP use (implicit) topological orderings?
+       e.g., what is the topological ordering in your (or my) bottom-up bounded knapsack code?
+    bottom-up implementations of DP uses pre-oredering.
+    bounded knapsack uses post-ordering.
+
+    (b) what about top-down implementations? what order do they use to traverse the graph?
+    Post-ordering.
+
+    (c) does that suggest there is a top-down solution for topological sort as well? 
+    YES---implemented in the class.
+
+
+Debriefing
+
+0.   What's your name?
+     Xinwei Lin
+
+1.   Approximately how many hours did you spend on this assignment?
+     2
+
+2.   Would you rate it as easy, moderate, or difficult?
+     easy
+
+3.   Did you work on it mostly alone, or mostly with other people?
+     alone
+
+4.   How deeply do you feel you understand the material it covers (0%-100%)?
+     100%
+
+5.   Take a moment to reflect on your midterm performance; separate the data structures and DP parts.
+     Now, do you understand all the problems you didn't solve correctly?
+     Both, yes.
+
+6.   Any other comments?
+     None
