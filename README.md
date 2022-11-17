@@ -36,5 +36,9 @@
  - bounded Knapsack (*knapsack_bounded.py*)  
  
  **HW8:**  
- - topological Sort (*topol.py*)
+ - topological Sort (*dijkstra.py*)
  - viterbi Algorithm (*viterbi.py*)  
+ 
+ **HW9:**  
+ - Dijkstra (*topol.py*)
+ - Traveling Salesman Problem (*tsp.py*)  
