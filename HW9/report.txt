@@ -1,0 +1,48 @@
+1.  Dijkstra
+    Q: What if you only have heapq, can you still make Dijkstra work (with the built-in heapq)? 
+    Can you re-analyze the time/space complexities?
+
+    Yes...we need to do extra works. We need to put duplicates into the queue and do additional
+    checks.
+
+    Time complexity: O( E*log(E) )
+    Space complexity: O( E )
+
+    It's DP for two reasons in my opinion:
+    Firstly, it traverse every node and edge in the graph in order to find the optimal solution where 
+    greddy doesn't.
+
+    Second, it updates the values for the nodes along the way (those grey nodes).
+
+    I think depends on the graph structure and the relative position of starting node and destination.
+
+2.  Traveling Salesman Problem
+    subproblem: a pair of a set that records the path and a number that records the exit node of the set.
+    recurrence relation: ???
+    new num of nodes V' = 2^V * V
+    new num of edges E' = V' * V
+    Space complexity = O( V')
+    Time complexity = O( V'*log(V') + E'log(V') )
+    Note the complexity is calculated from Dijkstra's algorithm but using V' and E'.
+
+Debriefing (required!): --------------------------
+
+0.  What's your name?
+    Xinwei Lin
+
+1.  Approximately how many hours did you spend on this assignment?
+    3
+
+2.  Would you rate it as easy, moderate, or difficult?
+    Dijkstra is easy but TSP is hard. 
+    So...using the philosophy of complexity, 
+    it is difficult.
+
+3.  Did you work on it mostly alone, or mostly with other people?
+    Alone
+
+4.  How deeply do you feel you understand the material it covers (0%-100%)? 
+    90%. 
+
+5.  Any other comments?
+    No.
