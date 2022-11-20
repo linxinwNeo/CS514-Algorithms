@@ -41,4 +41,4 @@
  
  **HW9:**  
  - Dijkstra (*topol.py*)
- - Traveling Salesman Problem (*tsp.py*)  
+ - Traveling Salesman Problem (*tsp.py*)  (skipped)
