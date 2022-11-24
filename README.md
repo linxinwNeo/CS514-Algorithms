@@ -42,3 +42,8 @@
  **HW9:**  
  - Dijkstra (*topol.py*)
  - Traveling Salesman Problem (*tsp.py*)  (skipped)
+
+ **HW10:**  
+ - 1-best structure (*rna.py*)
+ - number of structures (*rna.py*)
+ - k-best structures (*rna.py*)
