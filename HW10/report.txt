@@ -1,0 +1,11 @@
+1.  1-best structure
+    Time Complexity: O()
+    Space Complexity:
+
+2.  number of structures
+    Time Complexity:
+    Space Complexity:
+
+2.  k-best structures
+    Time Complexity:
+    Space Complexity:
