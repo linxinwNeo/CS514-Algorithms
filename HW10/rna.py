@@ -1,3 +1,5 @@
+from heapq import heappush, heapify, heappop
+
 # AU, GC, GU or inverse of them
 rna_links = [   
                 ('A', 'U'),
@@ -99,5 +101,66 @@ def total( data ):
 
 
 # k-best structures
-def kbest( data ):
-    return
+def kbest( data, k ):
+    n = len(data)
+    
+    record = [ [ [] ] * n for _ in range(n) ]
+    # record[i][j] meaning the best rna structure of rng segment from i to j
+    # record[0][length-1] contains the solution
+    # for back trace, we need to save triple at each index: (num, best_k)
+
+    for size in range( 2, n + 1 ): # size of span
+        for i in range( 0, n - size + 1 ): # left index of the span
+            bestSoFar = []
+            j = size + i
+            has_pair = False
+            for t in range( i, j ):
+                pair = is_pair( data[t], data[j-1] )
+                if pair:
+                    best_k1 = record[i][t-1]
+                    best_k2 = record[t+1][j-2]
+                    best_k, best1, best2 = copy_and_combine_queues(best_k1, best_k2, k)
+                    num = best1 + best2 + 1
+                    if num > best_rna_among_k(bestSoFar):
+                        push_new(best_k, (num, t, j-1, i, j), k)
+                        bestSoFar = best_k
+                        has_pair = True
+
+            if has_pair and best_rna_among_k(bestSoFar) > best_rna_among_k(record[i][j-2]):
+                record[i][j-1] = bestSoFar
+            else:
+                record[i][j-1] = record[i][j-2]
+
+    for l in record:
+        print(l)
+    return record[0]
+
+def push_new(q, ele, k):
+    heappush(q, ele)
+    if len(q) > k:
+        heappop(q)
+    return q
+
+def copy_and_combine_queues(q1, q2, k):
+    q = []
+    for ele in q1:
+        q.append(ele)
+    for ele in q2:
+        q.append(ele)
+
+    heapify(q)
+    while len(q) > k:
+        heappop(q)
+    return q, best_rna_among_k(q1), best_rna_among_k(q2)
+
+def best_rna_among_k(q):
+    max = 0
+    for ele in q:
+        if ele[0] > max:
+            max = ele[0]
+    return max
+
+# test cases
+a = "GUAC"
+print(kbest(a, 5))
+#[(2, '((.))'), (1, '.(.).'), (1, '..(.)'), (1, '...()'), (1, '(...)'), (0, '.....')]
