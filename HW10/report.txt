@@ -1,11 +1,25 @@
 1.  1-best structure
-    Time Complexity: O()
-    Space Complexity:
+    Space Complexity: O(n^2)
+    Time Complexity: O(n^3)
 
 2.  number of structures
-    Time Complexity:
-    Space Complexity:
+    Space Complexity: O(n^2)
+    Time Complexity: O(n^3)
 
 2.  k-best structures
-    Time Complexity:
-    Space Complexity:
+    Space Complexity: O(n^2 * k)
+    Time Complexity: O(n^3 + n^2*log(k))
+    
+
+0.  What's your name?
+    Xinwei Lin
+1.  Approximately how many hours did you spend on this assignment?
+    > 10
+2.  Would you rate it as easy, moderate, or difficult?
+    difficult
+3.  Did you work on it mostly alone, or mostly with other people?
+    alone
+4.  How deeply do you feel you understand the material it covers (0%-100%)? 
+    60%
+5.  Any other comments?
+    None
